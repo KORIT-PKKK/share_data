@@ -1,0 +1,21 @@
+CREATE TABLE store_mst(
+  store_id INT AUTO_INCREMENT PRIMARY KEY,
+  store_lat DOUBLE NOT NULL,
+  store_lng DOUBLE NOT NULL
+);
+
+CREATE TABLE store_post(
+  store_post_id INT AUTO_INCREMENT PRIMARY KEY,
+  store_id INT NOT NULL,
+  post_id INT NOT NULL
+);
+
+CREATE TABLE store_post_comment(
+  store_post_cmt_id INT AUTO_INCREMENT PRIMARY KEY,
+  store_post_id INT NOT NULL,
+  post_cmt TEXT,
+  create_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  update_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+

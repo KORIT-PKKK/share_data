@@ -1,7 +1,7 @@
 package com.portfolio.springapplication.security.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.portfolio.springapplication.common.ErrorResponseDto;
+import com.portfolio.springapplication.dto.ErrorResponseDto;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;

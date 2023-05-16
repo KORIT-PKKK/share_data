@@ -10,7 +10,6 @@ import com.portfolio.springapplication.security.exception.ErrorMap;
 import com.portfolio.springapplication.security.jwt.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -50,14 +49,14 @@ public class AuthService {
 
         if (userPrincipalDetail == null) {
             throw new CustomException("Invalid user.", ErrorMap.builder()
-                    .put("InvalidUser", "User not exist.").build());
+                    .put("user", "User not exist.").build());
         }
 
         String dbPassword = userPrincipalDetail.getPassword();
 
         if (!encoder.matches(password, dbPassword)) {
             throw new CustomException("Invalid password", ErrorMap.builder()
-                    .put("InvalidPassword", "Password not match.").build());
+                    .put("password", "Password not match.").build());
         }
 
         return jwtTokenProvider.generateToken(userPrincipalDetail);

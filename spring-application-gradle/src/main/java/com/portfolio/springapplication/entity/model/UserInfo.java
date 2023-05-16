@@ -1,11 +1,11 @@
-package com.portfolio.springapplication.dto.user;
+package com.portfolio.springapplication.entity.model;
 
 import lombok.Data;
 
 @Data
-public class UpdateReqDto {
-    private String username;
+public class UserInfo {
     private String name;
     private String introduce;
     private String imageUrl;
+
 }

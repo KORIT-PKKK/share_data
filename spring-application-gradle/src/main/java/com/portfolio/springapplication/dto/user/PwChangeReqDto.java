@@ -3,9 +3,8 @@ package com.portfolio.springapplication.dto.user;
 import lombok.Data;
 
 @Data
-public class UpdateReqDto {
+public class PwChangeReqDto {
     private String username;
-    private String name;
-    private String introduce;
-    private String imageUrl;
+    private String oldPassword;
+    private String newPassword;
 }

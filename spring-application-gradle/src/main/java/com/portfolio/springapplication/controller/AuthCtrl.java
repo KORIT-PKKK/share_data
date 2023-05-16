@@ -27,7 +27,6 @@ public class AuthCtrl {
 
     @PostMapping("/signout")
     public ResponseEntity<?> signOut(@RequestBody SignOutReqDto signOutReqDto){
-        System.out.println("in signout : " + signOutReqDto);
         return ResponseEntity.ok().body(authService.signOut(signOutReqDto));
     }
 
@@ -35,5 +34,4 @@ public class AuthCtrl {
     public ResponseEntity<?> refreshToken(@RequestBody RtkReqDto rtkReqDto){
         return ResponseEntity.ok().body(authService.refreshToken(rtkReqDto));
     }
-
 }
